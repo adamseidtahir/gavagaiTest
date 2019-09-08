@@ -108,6 +108,7 @@ form {
     display: grid;
     grid-template: "1 2 3 4";
     margin: 10%;
+    padding:1%;
     width: min-content;
     align-self: center;
     /* background-color: #ffffff; */
