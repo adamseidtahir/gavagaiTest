@@ -86,7 +86,12 @@ form {
 
 #search:hover {
     background-color: #00e28b;
+    cursor: pointer;
     
+}
+
+#language:hover{
+    cursor: pointer;
 }
 
 #language:hover, #word:hover {
