@@ -1,0 +1,277 @@
+html, body {
+    margin:0;
+    
+}
+#bg-blur{
+    position: fixed;
+    width:120vw;
+    height: 120vh;
+    top: -5vh;
+    left: -5%;
+    background-image: linear-gradient(0.15turn, #5becff 0%, #a45fff 25%, #ff70e7 50%, #ff7070 75%, #ffcd70 100%);
+    background-size: 400%;
+    animation: bganimation 10s infinite;
+    overflow:hidden;
+    filter: blur(100px);
+    z-index: -1;
+}
+
+@keyframes bganimation {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+}
+    
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 40vh;
+}
+
+#search, #word, #language{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    height: 5vw;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    background-color: white;
+    color: grey;box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.26);
+    transition: all .2s linear;
+}
+
+#word, #language {
+    text-indent: 40px;
+    font-size: 0.9em;
+}
+
+#word {
+    width:30vw;
+}
+
+#language {
+    width:15vw;
+    background-image: url(../img/arrow.png);
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position-y: 55%;
+    background-position-x: 90%;
+    border-right: 1px solid lightgrey;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    
+}
+
+#search {
+    width:10vw;
+    color: white;
+    font-size: 1.5em;
+    background-color: #00ff9d;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#search:hover {
+    background-color: #00e28b;
+    
+}
+
+#language:hover, #word:hover {
+    background-color: #eeeeee;
+}
+
+#search:focus, #language:focus, #word:focus {
+    outline: none;
+}
+
+.container{
+    display: grid;
+    grid-template: "1 2 3 4";
+    margin: 10%;
+    width: min-content;
+    align-self: center;
+    /* background-color: #ffffff; */
+    
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+
+
+
+
+.tile{
+    display: flex;
+    min-width: 240px;
+    height: 65px;
+    margin: 10px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #00000034;
+    
+    color: grey;
+    transition: all .2s linear;
+    
+}
+.tile:hover{
+    background-color: #00ff9d;
+    cursor: pointer;
+}
+
+a {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    text-decoration: none;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: center;
+    line-height: 65px;
+    
+}
+    
+#modal {
+    font-family: Arial, Helvetica, sans-serif; 
+    align-self: center;
+    top: 20vh;
+    padding: 2% 4% 4% 4%;
+    display: none;
+    opacity:0;
+    width: auto;
+    height: auto;
+    position: fixed;
+
+    background-color: white;
+    color:grey;
+    border-radius: 15px;
+
+    z-index: 2;
+}
+
+
+#modText {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#modText h1 {
+    align-self: flex-start;
+    font-size: 2em;
+}
+
+
+
+#modText ul {
+    align-self: flex-start;
+    list-style-type: none;
+    padding: 0;
+}
+#modText ul li {
+    font-size: 1em;
+    padding-top: 5%;
+}
+
+#shadow {
+    display:none;
+    opacity: 0;
+    position: fixed;
+    width:100vw;
+    height:100%;
+    background-color: #0000006c;
+    z-index: 1;
+}
+
+span {
+    font-size: 2em;
+    top: 2vh;
+    right: 4vh;
+    position: absolute;
+    transition: all 0.2s linear;
+}
+
+span:hover {
+    cursor: pointer;
+    color: black;
+}
+
+
+/* Small laptop */
+@media screen and (max-width: 1100px) {
+    .container{
+        grid-template: "1 2 3"
+    }
+    .close {
+        top: 0vh;
+        right: 1vh;
+    }
+    
+
+}
+
+/* Tablet */
+@media screen and (max-width: 800px) {
+    .container{
+        grid-template: "1 2 "
+    }
+    #search, #word, #language{
+        height: 10vw;
+    }
+    #word, #language {
+        text-indent: 20px;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 500px) {
+    .container{
+        grid-template: "1"
+    }
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+    #search, #word, #language{
+        width: 50vw;
+        border-radius: 15px;
+        margin: 1%;
+    }
+}
+
+/* 4K */
+@media screen and (min-width: 2000px) {
+    #word, #language {
+        font-size: 2em;
+    }
+    #search {
+        font-size: 3.5em;
+    }
+    .tile {
+        min-width: 480px;
+        height: 130px;
+    }
+    a {
+        font-size: 2em;
+        line-height: 130px;
+    }
+    #modText h1 {
+        font-size: 4em;
+    }
+    #modText ul li {
+        font-size: 2em;
+    }
+}
