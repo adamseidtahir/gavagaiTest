@@ -231,7 +231,7 @@ span:hover {
 /* Tablet */
 @media screen and (max-width: 800px) {
     .container{
-        grid-template: "1 2 "
+        grid-template: "1 2"
     }
     #search, #word, #language{
         height: 10vw;
@@ -243,8 +243,9 @@ span:hover {
 
 /* Phone */
 @media screen and (max-width: 500px) {
-    .container{
-        grid-template: "1"
+    .tile {
+        min-width: 120px;
+        height: 45px;
     }
     form {
         flex-direction: column;
@@ -254,6 +255,16 @@ span:hover {
         width: 50vw;
         border-radius: 15px;
         margin: 1%;
+    }
+    a {
+        font-size: 0.7em;
+        line-height: 45px;
+    }
+    #modText h1 {
+        font-size: 1.5em;
+    }
+    #modText ul li {
+        font-size: 0.75em;
     }
 }
 
