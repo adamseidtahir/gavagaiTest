@@ -60,6 +60,9 @@ form {
 
 #word {
     width:30vw;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-right: 1px solid lightgrey;
 }
 
 #language {
@@ -69,9 +72,8 @@ form {
     background-size: 10%;
     background-position-y: 55%;
     background-position-x: 90%;
-    border-right: 1px solid lightgrey;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+
+
     
 }
 
@@ -255,6 +257,7 @@ span:hover {
         width: 50vw;
         border-radius: 15px;
         margin: 1%;
+        border: none;
     }
     a {
         font-size: 0.7em;
