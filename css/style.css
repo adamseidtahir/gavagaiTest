@@ -246,7 +246,7 @@ span:hover {
 /* Phone */
 @media screen and (max-width: 500px) {
     .container {
-        margin:0;
+        margin:10% 0 0 0;
     }
     .tile {
         min-width: 120px;
