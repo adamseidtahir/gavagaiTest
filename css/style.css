@@ -12,7 +12,7 @@ html, body {
     background-size: 400%;
     animation: bganimation 10s infinite;
     overflow:hidden;
-    filter: blur(100px);
+    /* filter: blur(40px); */
     z-index: -1;
 }
 
