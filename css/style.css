@@ -1,9 +1,10 @@
+/* Adam Seid Tahir */
+
 html, body {
-    margin:0;
-    
-    
+    margin: 0;
 }
 
+/* Background animation */
 #bg{
     width:100vw;
     height: 100vh;
@@ -12,58 +13,47 @@ html, body {
     background-size: 400%;
     animation: bganimation 10s infinite;
     z-index: -1;
-
 }
 
-@keyframes bganimation {
-    0% {
-        background-position: 0% 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0% 50%
-    }
-}
-
-h1 {
-    align-self: center;
-    position: relative;
-    margin:17vh 0 0 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 5em;
-    color: white;
-}
-
+/* Container of everything */
 #root{
     display: flex;
     flex-direction: column;
 }
-    
 
+#header {
+    margin:17vh 0 0 0;
+    position: relative;
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5em;
+    color: #ffffff;
+}
+    
+/* Searchbar */
 form {
+    margin-top: 20vh;
     display: flex;
     justify-content: center;
-    margin-top: 20vh;
 }
 
 #search, #word, #language{
-    
-    font-family: Arial, Helvetica, sans-serif;
     height: 5vw;
-    border: 0;
     padding: 0;
-    border-radius: 0;
-    -webkit-appearance: none;
     background-color: white;
-    color: grey;box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.26);
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.26);
     transition: all .2s linear;
+    -webkit-appearance: none;
 }
 
 #word, #language {
-    text-indent: 40px;
     font-size: 0.9em;
+    text-indent: 40px;
+    
 }
 
 #word {
@@ -80,9 +70,6 @@ form {
     background-size: 10%;
     background-position-y: 55%;
     background-position-x: 90%;
-
-
-    
 }
 
 #search {
@@ -94,165 +81,178 @@ form {
     border-bottom-right-radius: 15px;
 }
 
+#language:hover, #word:hover {
+    background-color: #eeeeee;
+}
+
 #search:hover {
     background-color: #00e28b;
     cursor: pointer;
-    
 }
 
 #language:hover{
     cursor: pointer;
 }
 
-#language:hover, #word:hover {
-    background-color: #eeeeee;
-}
-
 #search:focus, #language:focus, #word:focus {
     outline: none;
 }
 
+/* Container for search result */
 .container{
     display: grid;
-    grid-template: "1 2 3 4";
-    margin: 10%;
+    grid-template: "a b c d";
+    margin: 10vh;
     padding:1%;
     width: min-content;
     align-self: center;
-    /* background-color: #ffffff; */
-    
     flex-wrap: wrap;
     overflow: hidden;
 }
 
-
-
-
-
+/* Tile for every word in container */
 .tile{
     display: flex;
     min-width: 240px;
-    height: 65px;
+    min-height: 65px;
     margin: 10px;
+    padding: 1%;
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 5px 5px 15px #00000034;
-    
     color: grey;
     transition: all .2s linear;
-    
 }
+
+
 .tile:hover{
     background-color: #00ff9d;
     cursor: pointer;
 }
 
+/* The words in container, the search-result */
 a {
     width: 100%;
     height: 100%;
     align-self: center;
-    text-decoration: none;
     color: grey;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     text-align: center;
+    text-decoration: none;
     line-height: 65px;
-    
 }
-    
-#modal {
-    font-family: Arial, Helvetica, sans-serif; 
+
+/* Error message */
+.error{
+    width: 100%;
+    height: 100%;
     align-self: center;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Modal window with word information */
+#modal {
+    position: fixed;
     top: 20vh;
     padding: 2% 4% 4% 4%;
     display: none;
-    opacity:0;
-    width: auto;
-    height: auto;
-    position: fixed;
-
     background-color: white;
+    font-family: Arial, Helvetica, sans-serif; 
     color:grey;
+    align-self: center;
+    opacity:0;
     border-radius: 15px;
-
     z-index: 2;
 }
 
-
+/* Text inside modal */
 #modText {
     display: flex;
     flex-direction: column;
 }
 
-
-#modText h1 {
-    align-self: flex-start;
-    font-size: 2em;
-}
-
-
-
 #modText ul {
-    align-self: flex-start;
     list-style-type: none;
     padding: 0;
 }
+
 #modText ul li {
-    font-size: 1em;
     padding-top: 5%;
 }
 
+/* Shadow to darken rest of page while modal is open */
 #shadow {
     display:none;
     opacity: 0;
-    position: fixed;
     width:100vw;
     height:100%;
+    position: fixed;
     background-color: #0000006c;
     z-index: 1;
 }
 
-span {
-    font-size: 2em;
+.close {
     top: 2vh;
     right: 4vh;
     position: absolute;
+    font-size: 2em;
     transition: all 0.2s linear;
 }
 
-span:hover {
-    cursor: pointer;
+.close:hover {
     color: black;
+    cursor: pointer;
+}
+
+/* Animation for background */
+@keyframes bganimation {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 
 /* Small laptop */
 @media screen and (max-width: 1100px) {
     .container{
-        grid-template: "1 2 3"
+        grid-template: "a b c"
     }
+
     .close {
         top: 0vh;
         right: 1vh;
     }
+
     h1 {
         font-size: 4em;
     }
-    
-
 }
 
 /* Tablet */
 @media screen and (max-width: 800px) {
     .container{
-        grid-template: "1 2"
+        grid-template: "a b"
     }
+
     #search, #word, #language{
         height: 10vw;
     }
+
     #word, #language {
         text-indent: 20px;
     }
+
     h1 {
         font-size: 3em;
     }
@@ -263,31 +263,38 @@ span:hover {
     .container {
         margin:10% 0 0 0;
     }
+
     .tile {
         min-width: 120px;
-        height: 45px;
+        min-height: 45px;
     }
+
     form {
         margin-top: 10vh;
         flex-direction: column;
         align-items: center;
     }
+    
     #search, #word, #language{
         width: 50vw;
         border-radius: 15px;
         margin: 1%;
         border: none;
     }
+
     a {
         font-size: 0.7em;
         line-height: 45px;
     }
+
     #modText h1 {
         font-size: 1.5em;
     }
+
     #modText ul li {
         font-size: 0.75em;
     }
+
     h1 {
         margin-top: 10vh;
         font-size: 2em;
@@ -300,23 +307,29 @@ span:hover {
     #word, #language {
         font-size: 2em;
     }
+
     #search {
         font-size: 3.5em;
     }
+
     .tile {
         min-width: 480px;
-        height: 130px;
+        min-height: 130px;
     }
+
     a {
         font-size: 2em;
         line-height: 130px;
     }
+
     #modText h1 {
         font-size: 4em;
     }
+
     #modText ul li {
         font-size: 2em;
     }
+
     h1 {
         margin: 17vh 0 0 0;
         font-size: 10em;

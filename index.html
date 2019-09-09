@@ -1,3 +1,5 @@
+<!-- Adam Seid Tahir -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +12,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 </head>
 <body>
+    <!-- Background animation -->
     <div id="bg"></div>
+
+    <!-- Shadow for modal window -->
     <div id="shadow"></div>
+
+    <!-- Container -->
     <div id="root">
-        <h1>Semantically Similar Words</h1>
+
+        <!-- Header -->
+        <h1 id="header">Semantically Similar Words</h1>
+
+        <!-- Searchbar -->
         <form id="form">
             <input id="word" type="text" placeholder="Enter a word..." />
             <select id="language">
@@ -65,10 +76,10 @@
                 <option value="ur">Urdu</option>
                 <option value="vi">Vietnamese</option>
             </select>
-            
-            <input type="button" value="Go" id="search"/>
+            <input type="button" value="GO" id="search"/>
         </form>
 
+        <!-- Modal with word-information, initially hidden -->
         <div id = "modal">
             <span class="close">&times;</span>
             <div id="modText" ></div>
