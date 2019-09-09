@@ -195,7 +195,7 @@ function searchAnim() {
     if (screen.width > 500){
         TweenMax.to('#word', 0.5, {width: "15vw", ease: Power2.easeInOut});
     }
-    
+    TweenMax.to('h1', 1, {marginTop: "4vh",delay: 0.5, ease: Power2.easeInOut});
     TweenMax.to('#form', 1, {marginTop: "4vh",delay: 0.5, ease: Power2.easeInOut});
     
 }
